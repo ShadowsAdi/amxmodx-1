@@ -127,7 +127,11 @@ void CPlayer::Connect(const char* address ){
 
 void CPlayer::restartStats(bool all)
 {
-	if ( all ) memset(weapons,0,sizeof(weapons));
+	if ( all ) 
+	{
+		MF_Log("Returned");
+		memset(weapons,0,sizeof(weapons));
+	}
 	memset(weaponsRnd,0,sizeof(weaponsRnd));   //DEC-Weapon (Round) stats
 	memset(attackers,0,sizeof(attackers));
 	memset(victims,0,sizeof(victims));
