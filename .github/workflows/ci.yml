@@ -139,4 +139,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: plugin_binaries_180
-          path: ${{ ${{ github.workspace }}/ambuild/build }}/*
+          path: ${{ github.workspace/ambuild/build }}/*
