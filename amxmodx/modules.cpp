@@ -513,6 +513,7 @@ int set_amxnatives(AMX* amx, char error[128])
 	}
 
 	amx_Register(amx, string_Natives, -1);
+	AMXXLOG_Log("HERE AMX 1");
 	amx_Register(amx, float_Natives, -1);
 	amx_Register(amx, file_Natives, -1);
 	amx_Register(amx, amxmodx_Natives, -1);
@@ -544,11 +545,13 @@ int set_amxnatives(AMX* amx, char error[128])
 
 	if (amx_FindPublic(amx, "plugin_natives", &idx) == AMX_ERR_NONE)
 	{
+		AMXXLOG_Log("HERE AMX 2");
 		if ((err = amx_ExecPerf(amx, &retval, idx)) != AMX_ERR_NONE)
 		{
 			Debugger::GenericMessage(amx, err);
 			AMXXLOG_Log("An error occurred in plugin_natives. This is dangerous!");
 		}
+		AMXXLOG_Log("HERE AMX 3");
 	}
 
 	EnableDebugHandler(amx, pd);
